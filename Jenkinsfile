@@ -58,6 +58,14 @@ pipeline {
                 echo "ansible-playbook deploy-to-production.yml"
             }
         }
+
+                stage('Completed Task') {
+            steps {
+                // Deploy the application to a production server (e.g., AWS EC2 instance)
+                // Configure your deployment tool and server details
+                echo "Task Completed Successfully"
+            }
+        }
     }
 
     post {
