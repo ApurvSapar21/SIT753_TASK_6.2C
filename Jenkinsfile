@@ -61,12 +61,11 @@ pipeline {
     }
 
     post {
-        success{
-            // Send a notification email if the pipeline fails
-                mail to: "apurvsapar@gmail.com",
-                subject: "Pipeline Failed: ${currentBuild.fullDisplayName}",
-                body: "The Jenkins pipeline has failed. Please check the logs for details.",
-            
+        success {
+            // Send a notification email if the pipeline succeeds
+            mail(to: "apurvsapar@gmail.com",
+                 subject: "Pipeline Succeeded: ${currentBuild.fullDisplayName}",
+                 body: "The Jenkins pipeline has succeeded. Please check the logs for details.")
         }
     }
 }
